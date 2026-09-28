@@ -1,0 +1,284 @@
+```css
+/* =========================================
+   GENERAL
+========================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #111;
+    color: #fff;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    padding: 30px;
+}
+
+
+/* =========================================
+   CABECERA
+========================================= */
+
+header {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+h1 {
+    font-size: 32px;
+
+    font-weight: 700;
+}
+
+#contador {
+    margin-top: 8px;
+
+    color: #999;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   GALERÍA
+========================================= */
+
+.galeria {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 30px;
+
+    width: 100%;
+}
+
+.imagen-container {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: center;
+}
+
+
+/* =========================================
+   IMÁGENES
+========================================= */
+
+.imagen-container img {
+
+    display: block;
+
+    /*
+     * Mantiene el tamaño proporcional
+     * de la imagen original.
+     */
+
+    width: auto;
+
+    height: auto;
+
+    /*
+     * Nunca permitirá que una imagen
+     * se salga de la pantalla.
+     */
+
+    max-width: 100%;
+
+    object-fit: contain;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+/*
+ * Efecto al pasar el ratón
+ */
+
+.imagen-container img:hover {
+
+    transform:
+        scale(1.01);
+}
+
+
+/* =========================================
+   MENSAJES
+========================================= */
+
+.cargando,
+.error,
+.sin-imagenes {
+
+    text-align: center;
+
+    color: #999;
+
+    font-size: 16px;
+
+    padding: 40px 20px;
+}
+
+.error {
+
+    color: #ff6b6b;
+}
+
+
+/* =========================================
+   VISOR
+========================================= */
+
+.visor {
+
+    display: none;
+
+    position: fixed;
+
+    z-index: 9999;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        rgba(0, 0, 0, 0.95);
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+
+    cursor: zoom-out;
+}
+
+
+/*
+ * Visor activo
+ */
+
+.visor.activo {
+
+    display: flex;
+}
+
+
+/*
+ * Imagen ampliada
+ */
+
+.visor img {
+
+    max-width: 100%;
+
+    max-height: 100%;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+
+    cursor: default;
+}
+
+
+/* =========================================
+   BOTÓN CERRAR
+========================================= */
+
+.cerrar {
+
+    position: absolute;
+
+    top: 15px;
+
+    right: 25px;
+
+    width: 45px;
+
+    height: 45px;
+
+    border: none;
+
+    background: transparent;
+
+    color: white;
+
+    font-size: 40px;
+
+    line-height: 40px;
+
+    cursor: pointer;
+
+    z-index: 10000;
+}
+
+.cerrar:hover {
+
+    color: #ccc;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 10px;
+    }
+
+    header {
+
+        margin-bottom: 20px;
+    }
+
+    h1 {
+
+        font-size: 26px;
+    }
+
+    .galeria {
+
+        gap: 15px;
+    }
+
+    .visor {
+
+        padding: 10px;
+    }
+
+    .cerrar {
+
+        top: 10px;
+
+        right: 15px;
+
+        font-size: 35px;
+    }
+}
+```
